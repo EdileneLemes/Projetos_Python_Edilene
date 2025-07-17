@@ -3,9 +3,9 @@ Projeto 01 – Boletim Escolar -   Autora: Edilene Teixeira - Data: Julho de 202
 
 1) Objetivo do Projeto: 
 
-a) Este projeto é um sistema simples de Boletim Escolar, desenvolvido com o objetivo de calcular a média das notas de um aluno;
+  a) Este projeto é um sistema simples de Boletim Escolar, desenvolvido com o objetivo de calcular a média das notas de um aluno;
 
-b) Exibir sua situação final (Aprovado ou Reprovado), com base em critérios definidos;
+  b) Exibir sua situação final (Aprovado ou Reprovado), com base em critérios definidos;
 
 
 2) Funcionalidades:
