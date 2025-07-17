@@ -1,18 +1,14 @@
 # Projeto 01 - Boletim Escolar
-Projeto 01 – Boletim Escolar
+Projeto 01 – Boletim Escolar -   Autora: Edilene Teixeira - Data: Julho de 2025 
 
-Autora: Edilene Teixeira 
-
-Data: Julho de 2025 
-
-Objetivo do Projeto: 
+1) Objetivo do Projeto: 
 
 a) Este projeto é um sistema simples de Boletim Escolar, desenvolvido com o objetivo de calcular a média das notas de um aluno;
 
 b) Exibir sua situação final (Aprovado ou Reprovado), com base em critérios definidos;
 
 
-Funcionalidades:
+2) Funcionalidades:
 
 a) Cadastro do nome do aluno;
 
@@ -25,7 +21,7 @@ e) Critério: Média ≥ 7,0 → Aprovado;
 
 f) Média < 4,0 → Reprovado;
 
-Lógica aplicada:
+3) Lógica aplicada:
 
 a) Uso de variáveis;
 
@@ -46,7 +42,7 @@ h) Estrutura Condicional;
 i) Método das listas em Python - append();
 
 
-Habilidade adquirida durante o desenvolvimento do Projeto Boletim Escolar:
+4) Habilidade adquirida durante o desenvolvimento do Projeto Boletim Escolar:
 
 a) Praticar os fundamentos da linguagem Python;
 
