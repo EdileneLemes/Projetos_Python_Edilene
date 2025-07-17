@@ -1,5 +1,6 @@
 # Projeto 01 - Boletim Escolar
-Projeto 01 – Boletim Escolar (Python) print()
+Projeto 01 – Boletim Escolar (Python)
+print("")
 Autora: Edilene Teixeira print()
 Data: Julho de 2025 print()
 Objetivo do Projeto: print()
