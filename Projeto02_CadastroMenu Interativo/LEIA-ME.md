@@ -1,5 +1,7 @@
 Projeto 02 – Cadastro com Menu Interativo (sem salvamento em arquivo)
+
 Descrição:
+
   Este projeto em Python é um sistema simples de cadastro de dados com menu interativo no terminal, utilizando listas e dicionários. Os dados ficam armazenados apenas em memória, ou seja, não são salvos em arquivo — eles existem apenas enquanto o programa está em execução.
 
 Conceitos aplicados:
