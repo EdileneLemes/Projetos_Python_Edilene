@@ -30,7 +30,8 @@ Experiência anterior:
 2) Coordenadora de informática;
 3) Professora licenciada em Matemática e Física;
 
-Contato
+Contato:
+
 📧 E-mail: edilenedaniellemes@gmail.com
 
 🔗 LinkedIn: [seu-linkedin-aqui]
