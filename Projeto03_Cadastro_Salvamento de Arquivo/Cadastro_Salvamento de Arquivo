@@ -1,1 +1,120 @@
+# Projeto 03 – Cadastro com Salvamento em Arquivo (JSON).
+
+# Passo 1:
+# a) Estrutura inicial com leitura do arquivo JSON;
+# b) Importa a biblioteca json;
+# c) Tenta carregar os cadastros salvos anteriormente;
+# d) Cria a lista cadastros com esses dados (ou vazia, se for a primeira vez);
+
+print("Projeto 03 - Cadastro com Salvamento em Arquivo (JSON).")
+print("===========================================================================\n")
+print("")    
+        
+# PARTE 1 - Projeto 03 - Abertura, Leitura e Salvamento em Arquivo JSON
+
+import json # É uma biblioteca do Python usada para salvar e carregar dados em formato de texto, muito usado em sistemas e APIs.
+            # Ela trabalha com arquivos .json, que são como tabelas de dados em texto simples.
+import os # os é uma biblioteca padrão do Python. Ela permite que o seu programa interaja com o sistema operacional,
+          # por isso o nome os (de Operating System = Sistema Operacional).
+
+ARQUIVO = "cadastros.json"
+# significa que estamos criando uma variável chamada ARQUIVO, que guarda o nome do arquivo onde os dados do cadastroserão salvos e carregados.
+
+def carregar_cadastros():
+    if os.path.exists(ARQUIVO):    # Verifica se existe um arquivo com este nome ARQUIVO
+        with open(ARQUIVO, "r", encoding="utf-8") as f: # with abre o arquivo, w (write) permite a escrever, utf-8 permite acentuação e f chama o arquivo para dentro do bloco de código.
+            return json.load(f)   # Significa que a função vai ler o conteúdo do arquivo f (que está aberto para leitura) e transformar os dados do arquivo JSON em uma estrutura de dados do Python (como listas e dicionários).
+    else:
+        return []  #significa que a função vai devolver uma lista vazia.
+
+
+def salvar_cadastros():   # Salva os cadastros no arquivo
+    with open(ARQUIVO, "w", encoding="utf-8") as f:  # with abre o arquivo, w (write) permite a escrever, utf-8 permite acentuação e f chama o arquivo para dentro do bloco de código.
+        json.dump(cadastros, f, indent=4, ensure_ascii=False)
+        
+# json.dump() é a função que converte os dados Python para o formato JSON e grava no arquivo;
+# cadastros é a lista que você quer salvar;
+# f é o arquivo aberto (geralmente em modo escrita "w");
+# indent=4 deixa o arquivo JSON bonitinho e organizado, com uma indentação de 4 espaços para facilitar a leitura;
+# ensure_ascii=False permite salvar caracteres especiais e acentuados corretamente no arquivo, em vez de transformá-los em códigos Unicode;
+# Lista de cadastros (inicialmente com dados carregados do arquivo)
+
+cadastros = carregar_cadastros()
+# a variável cadastros receba a lista de cadastros carregada do arquivo cadastros.json, se o arquivo existir;
+# caso não exista, carregar_cadastros() retorna uma lista vazia [], e cadastros será uma lista vazia para iniciar os cadastros do zero;
+
+# PARTE 2: Função adicionar_cadastro() permite o salvamento dos dados cadastrados
+
+def adicionar_cadastro(nome, idade, profissao, cidade, estado, email): # É usada para registrar esses dados em um cadastro.
+    cliente = {
+        "nome": nome,
+        "idade": idade,
+        "profissao": profissao,
+        "cidade": cidade,
+        "estado": estado,
+        "email": email
+    }
+    cadastros.append(cliente)   # Adiciona o cliente à lista global que é cadastros
+    salvar_cadastros()          # Salva a lista atualizada no arquivo JSON
+    print(f"\nCadastro de {nome} realizado com sucesso!")
+
+# PARTE 3: Função de listar_cadastros() permite a listagem dos dados cadastrados
+
+def listar_cadastros():
+    if not cadastros: # Se não houver cadastros imprimi na tela a mensagem abaixo
+        print("\nNenhum cadastro encontrado.\n")
+    else: # Senão
+        print("\nLista de Cadastros:")
+        for i, cliente in enumerate(cadastros):
+# Explicação detalhada:
+# for → comando que inicia um laço de repetição (loop), que executa algo várias vezes;
+# i → representa o índice (a posição do cliente na lista). Começa do 0, depois 1, 2...;
+# cliente → representa um dos itens dentro da lista cadastros;
+# cada item é um dicionário com os dados da pessoa;
+# enumerate(cadastros) → é uma função que retorna tanto o índice (i) quanto o valor (cliente) de cada item da lista;
+
+            print(f"{i+1} - Nome: {cliente['nome']}, Idade: {cliente['idade']}, Profissão: {cliente['profissao']}, Cidade: {cliente['cidade']}, Estado: {cliente['estado']}, Email: {cliente['email']}")
+        print()
+              
+# PARTE 4: Menu interativo com as opções 1 (Adicionar Dados), 2 (Listar Dados) e 3 (Sair ou Voltar para o Menu)
+
+while True: # Enquanto executar o True (verdadeiro) será impresso na tela as opções do menu e entrada de dados
+    print("===== MENU =====")
+    print("1 - Adicionar novo cadastro")
+    print("2 - Listar cadastros")
+    print("3 - Sair")
+    opcao = input("Escolha uma opção (1, 2 ou 3): ")
+
+    if opcao == "1":
+        print("\nNovo Cadastro:")
+        nome = input("Nome     : ")
+        idade = int(input("Idade    : "))
+        profissao = input("Profissão: ")
+        cidade = input("Cidade   : ")
+        estado = input("Estado   : ")
+        email = input("Email    : ")
+        adicionar_cadastro(nome, idade, profissao, cidade, estado, email)
+
+    elif opcao == "2": #Significa "senão se" — é uma continuação da estrutura if, usada quando temos mais de duas opções.
+        listar_cadastros()
+
+    elif opcao == "3":  #Significa "senão se" — é uma continuação da estrutura if, usada quando temos mais de duas opções.
+        print("\nEncerrando o programa. Até logo!")  #Imprime na tela esta mensagem do print()
+        break  # Para o Programa
+
+    else: # Senão execute a mensagem abaixo
+        print("\nOpção inválida. Tente novamente.\n") #Imprime na tela esta mensagem do print()
+
+# OBJETIVO:
+
+# 1)Fazer cadastros normalmente;
+# 2)os dados ficarão salvos no arquivo cadastros.json no seu computador, mesmo se reiniciar o programa;
+
+
+
+
+
+
+
+
 
