@@ -31,6 +31,8 @@ Experiência anterior:
 3) Professora licenciada em Matemática e Física;
 
 Contato
-📧 E-mail: [seu-email-aqui]
+📧 E-mail: edilenedaniellemes@gmail.com
+
 🔗 LinkedIn: [seu-linkedin-aqui]
+
 📂 GitHub: github.com/seu-usuario
