@@ -1,1 +1,73 @@
+# Projeto 02 - Incluir Menu Interativo no Cadastro Simples
+
+# Será uma estrutura para cadastrar e listar dados, que depois podemos adaptar para contatos, alunos, produtos, etc.
+# Adicionar novo cadastro, 2 - Listar cadastros e 3 - Sair.
+
+print("Projeto 02 - Incluir Menu Interativo no Cadastro Simples")
+print("===========================================================================\n")
+print("")
+
+# PARTE 1 - CRIAÇÃO DA LISTA E INCLUSÃO DE CADASTROS
+cadastros = [] # Lista para armazenar os cadastros
+
+
+def adicionar_cadastro(nome, idade, profissao, cidade, estado, email): # Função adicionar_cadastro criada para adicionar cadastro
+    cliente = {  # Uso do Dicionário 
+        "nome": nome,
+        "idade": idade,
+        "profissao": profissao,
+        "cidade": cidade,
+        "estado": estado,
+        "email": email
+        
+    }
+    cadastros.append(cliente) # Append permite incluir valores no dicionário cliente que faz parte da lista cadastros
+    print(f"\n Cadastro de {nome} realizado com sucesso!")
+    
+# PARTE 2 - LISTAGEM DE CADASTROS
+def listar_cadastros():
+    if not cadastros:
+        print("\nNenhum cadastro encontrado.\n")
+    else:
+        print("\nLista de Cadastros:")
+        for i, cliente in enumerate(cadastros):
+            print(f"{i+1} - Nome: {cliente['nome']}, Idade: {cliente['idade']}, Profissão: {cliente['profissao']}, Cidade: {cliente['cidade']}, Estado: {cliente['estado']}, Email: {cliente['email']}")
+        print()
+
+# PARTE 3 - TESTE DOS DADOS DO CADASTRO
+adicionar_cadastro("Daniel ", 22, "Médico    ", "Sorocaba ", "SP", "danielteixeira@gmail.com")
+adicionar_cadastro("Edson  ", 46, "Gestor    ", "Vinhedo  ", "SP", "edsonnevess@gmail.com")
+adicionar_cadastro("Edilene", 48, "Professora", "Marília  ", "SP", "edilenellemes@gmail.com")
+adicionar_cadastro("João   ", 40, "Arquiteto ", "São Paulo", "SP", "joaoalves@gmail.com")
+
+# PARTE 4 - MENU INTERATIVO
+while True: # Enquanto executar o True será impresso na tela as opçoes do menu e entrada de dados
+    print("===== MENU =====")
+    print("1 - Adicionar novo cadastro")
+    print("2 - Listar cadastros")
+    print("3 - Sair")
+    opcao = input("Escolha uma opção (1, 2 ou 3): ")
+
+# PARTE 5 - ADICIONAR NOVO CADASTRO NO MENU INTERATIVO
+    if opcao == "1": # Se a opção é 1 exibir o conteúdo do print() e permitir a entrada dos novos dados
+        print("\n Novo Cadastro:")
+        nome      = input("Nome     : ")
+        idade     = int(input("Idade   : "))
+        profissao = input("Profissão: ")
+        cidade    = input("Cidade   : ")
+        estado    = input("Estado   : ")
+        email     = input("Email    : ")
+        adicionar_cadastro(nome, idade, profissao, cidade, estado, email)
+        
+# PARTE 6 - PERMITE A LISTAGEM DO CADASTRO NO MENU INTERATIVO       
+    elif opcao == "2": # Se a opção é 2 imprimir todos os cadastros através da função listar_cadastros()
+        listar_cadastros()
+        
+# PARTE 7 - PERMITE DO MENU INTERATIVO             
+    elif opcao == "3": # Se a opção é 3 parar o programa e exibir a mensagem que está dentro print()
+        print("\n Encerrando o programa. Até logo!")
+        break
+
+else: # Senão exiba a mensagem que está dentro do print() e escolher outra opção do menu
+        print("\n Opção inválida. Tente novamente.\n")
 
