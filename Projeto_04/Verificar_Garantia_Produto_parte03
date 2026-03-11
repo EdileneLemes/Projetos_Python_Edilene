@@ -1,0 +1,28 @@
+# Verificar garantia do produto - Parte 03
+
+# Objetivo: Criar um programa que:
+
+# peça o nome do usuário, peça o produto, peça quantos meses de uso e informe se o produto ainda está na garantia
+
+# Se tem garantia estendida ou se acabou a garantia
+
+# Utilizei o print(), input(), int() e o if, elif ou else para indicar condição
+
+nome = input("Qual seu nome? ")
+
+produto = input("Digite o nome do produto: ")
+
+meses = int(input("Quantos meses de uso tem o produto? "))
+
+print()
+print("Cliente:" , nome)
+print("Produto:" , produto)
+
+if meses <= 12:
+    print("Seu produto está na garantia.")
+
+elif meses <= 24:
+    print("Seu produto está na garantia estendida.")
+    
+else:
+    print("Infelizmente a garantia do seu produto já acabou.")
