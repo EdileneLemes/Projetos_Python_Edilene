@@ -17,6 +17,7 @@ meses = int(input("Quantos meses de uso tem o produto? "))
 print()
 print("Cliente:" , nome)
 print("Produto:" , produto)
+print("Tempo de Uso:" , meses)
 
 if meses <= 12:
     print("Seu produto está na garantia.")
